@@ -12,11 +12,11 @@
 .ticker {
     height: 100px;
     margin:10px auto;
-    background-color: white;
+    background-color: grey;
     display: inline-block;
 }
 
-#clock {
+.clockprint {
     font-size: 40px;
     text-align: center;
     color: white;

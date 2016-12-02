@@ -43,15 +43,11 @@
 			<div class="ticker col-xs-3"></div>
 		</div>
 		<div class="row">
-			<div id="clock" class="col-sm-12"></div>
+			<div class="col-sm-12 clockprint"><h1>Berlin Clock</h1> </div>
+			<div id="clock" class="col-sm-12 clockprint"></div>
+
 		</div>
 	</div>
 </body>
 <script src="js/BerlinClock.js"></script>
-<script type="text/javascript">
-	(function() {
-				BerlinClock.tick();
-				setInterval(BerlinClock.tick.bind(BerlinClock), 1000);
-	})();
-</script>
 </html>

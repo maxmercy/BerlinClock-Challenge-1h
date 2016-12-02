@@ -4,10 +4,9 @@ var BerlinClock = {
             second = time.getSeconds();
         minute = time.getMinutes();
         hour = time.getHours();
-
         this.updateHours()
         this.updateMinutes()
-
+        this.updateClock(hour, minute, second)
     },
 
     updateSeconds: function(second) {
@@ -16,20 +15,20 @@ var BerlinClock = {
 
     updateHours: function() {
         nbr = Math.floor(hour / 5)
-        nbrYellowFive = $('#hoursOfFive .yellow').size();
-        if (nbr != nbrYellowFive) {
-            if (nbr < nbrYellowFive) {
-                $("#hoursOfFive .ticker").removeClass('yellow');
+        nbrRedFive = $('#hoursOfFive .red').size();
+        if (nbr != nbrRedFive) {
+            if (nbr < nbrRedFive) {
+                $("#hoursOfFive .ticker").removeClass('red');
             }
-            $("#hoursOfFive .ticker:lt(" + nbr + ")").addClass('yellow');
+            $("#hoursOfFive .ticker:lt(" + nbr + ")").addClass('red');
         }
         nbrRest = hour - nbr * 5
-        nbrYellowFiveOne = $('#hoursOfOne .yellow').size();
-        if (nbrRest != nbrYellowFiveOne) {
-            if (nbrRest < nbrYellowFiveOne) {
-                $("#hoursOfOne .ticker").removeClass('yellow');
+        nbrRedFiveOne = $('#hoursOfOne .red').size();
+        if (nbrRest != nbrRedFiveOne) {
+            if (nbrRest < nbrRedFiveOne) {
+                $("#hoursOfOne .ticker").removeClass('red');
             }
-            $("#hoursOfOne .ticker:lt(" + nbrRest + ")").addClass('yellow');
+            $("#hoursOfOne .ticker:lt(" + nbrRest + ")").addClass('red');
         }
     },
 
@@ -39,9 +38,12 @@ var BerlinClock = {
         if (nbr != nbrYellowFive) {
             if (nbr < nbrYellowFive) {
                 $("#minutesOfFive .ticker").removeClass('yellow');
+                  $("#minutesOfFive .ticker").removeClass('red');
             }
             $("#minutesOfFive .ticker:lt(" + nbr + ")").addClass('yellow');
+            $("#minutesOfFive .yellow:nth-child(3n)").addClass('red');
         }
+
         nbrRest = minute - nbr * 5
         nbrYellowFiveOne = $('#minutesOfOne .yellow').size();
         if (nbrRest != nbrYellowFiveOne) {
@@ -53,7 +55,11 @@ var BerlinClock = {
     },
 
     updateClock: function(hour, minute, second) {
-      console.log()
+        $('#clock').empty();
+        if (minute <10) { min = "0" + minute}
+        $('#clock').append( hour+":"+min+":"+second );
+
+
     },
     reset: function() {
     }

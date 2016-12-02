@@ -1,0 +1,33 @@
+.row div {
+    border-right: 5px solid #37474f;
+}
+
+#seconds div{
+    display:flex;
+    border-radius:50%;
+    width:110px;
+    margin:10px auto;
+}
+
+.ticker {
+    height: 100px;
+    margin:10px auto;
+    background-color: white;
+    display: inline-block;
+}
+
+#clock {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+
+.yellow {
+    background-color: #f1c40f;
+}
+.red {
+    background-color: #c0392b;
+}
+.black {
+    background-color: #37474f;
+}

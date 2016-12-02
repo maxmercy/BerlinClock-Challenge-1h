@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>Berlin Clock</title>
+	<script type="text/javascript" src="../lib/jquery-1.12.3.min.js"></script>
+	<script src="../lib/bootstrap.min.js" ></script>
+	<link rel="stylesheet" href="../lib/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body class="black">
+	<div id="berlinClock" class="container">
+		<div id="seconds" class="row">
+			<div class="ticker secondsCircle"></div>
+		</div>
+		<div id="hoursOfFive" class="row">
+			<div class="ticker col-xs-3"></div>
+			<div class="ticker col-xs-3"></div>
+			<div class="ticker col-xs-3"></div>
+			<div class="ticker col-xs-3"></div>
+		</div>
+		<div id="hoursOfOne" class="row">
+			<div class="ticker col-xs-3"></div>
+			<div class="ticker col-xs-3"></div>
+			<div class="ticker col-xs-3"></div>
+			<div class="ticker col-xs-3"></div>
+		</div>
+		<div id="minutesOfFive" class="row">
+			<div class="ticker col-xs-1"></div>
+			<div class="ticker col-xs-1"></div>
+			<div class="ticker col-xs-1"></div>
+			<div class="ticker col-xs-1"></div>
+			<div class="ticker col-xs-1"></div>
+			<div class="ticker col-xs-1"></div>
+			<div class="ticker col-xs-1"></div>
+			<div class="ticker col-xs-1"></div>
+			<div class="ticker col-xs-1"></div>
+			<div class="ticker col-xs-1"></div>
+			<div class="ticker col-xs-1"></div>
+		</div>
+		<div id="minutesOfOne" class="row">
+			<div class="ticker col-xs-3"></div>
+			<div class="ticker col-xs-3"></div>
+			<div class="ticker col-xs-3"></div>
+			<div class="ticker col-xs-3"></div>
+		</div>
+		<div class="row">
+			<div id="clock" class="col-sm-12"></div>
+		</div>
+	</div>
+</body>
+<script src="js/BerlinClock.js"></script>
+<script type="text/javascript">
+	(function() {
+				BerlinClock.tick();
+				setInterval(BerlinClock.tick.bind(BerlinClock), 1000);
+	})();
+</script>
+</html>
